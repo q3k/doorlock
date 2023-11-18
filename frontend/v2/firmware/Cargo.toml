@@ -2,5 +2,6 @@
 members = [
     "lockbsp",
     "lockfw",
+    "locklogic",
 ]
 resolver = "2"

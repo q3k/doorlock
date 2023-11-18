@@ -1,0 +1,12 @@
+[package]
+name = "locklogic"
+version = "1.0.0"
+edition = "2021"
+resolver = "2"
+
+[dependencies]
+embedded-graphics = "0.8.1"
+heapless = "0.8.0"
+micromath = "2.1.0"
+ssd1306 = "0.8.4"
+wavv = "0.1.4"
