@@ -271,11 +271,8 @@ name = "lockbsp"
 version = "1.0.0"
 dependencies = [
  "cortex-m-rt",
- "embedded-hal",
- "locklogic",
  "rp2040-boot2",
  "rp2040-hal",
- "wavv",
 ]
 
 [[package]]

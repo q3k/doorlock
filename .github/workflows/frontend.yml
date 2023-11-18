@@ -1,0 +1,25 @@
+name: "Frontend"
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: test logic
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: nightly
+      - run: cd frontend/v2/firmware/locklogic && cargo test --all-features
+  build:
+    name: build fw
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: nightly
+          target: thumbv6m-none-eabi
+      - run: cd frontend/v2/firmware/lockfw && cargo build

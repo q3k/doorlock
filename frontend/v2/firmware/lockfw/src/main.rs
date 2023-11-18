@@ -12,7 +12,6 @@ use bsp::hal::{
     clocks::{init_clocks_and_plls, Clock},
     gpio,
     pac,
-    pwm,
     spi,
     sio::Sio,
     watchdog::Watchdog,
@@ -73,7 +72,6 @@ fn main() -> ! {
 
     let mut led_pin = pins.dbg.into_push_pull_output();
 
-    let mut dbg_state = false;
     loop {
         let inst = timer.get_counter();
         let us = inst.ticks();
@@ -92,5 +90,7 @@ fn main() -> ! {
             7 => { display.set_state(locklogic::display::State::Correct); },
             _ => {},
         };
+
+        led_pin.set_state(((s as u64) % 2 == 0).into()).ok();
     }
 }

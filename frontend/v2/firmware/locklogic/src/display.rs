@@ -85,7 +85,7 @@ impl<D> crate::Component for Controller<D>
 where
     D: Display,
 {
-    fn tick(&mut self, us: u64) {
+    fn tick(&mut self, _us: u64) {
         self.target.clear(BinaryColor::Off).unwrap();
 
         let center = embedded_graphics::geometry::Point {
